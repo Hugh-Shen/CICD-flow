@@ -47,4 +47,4 @@ jobs:
         with:
           # FOLDER: dist
           TOKEN: ${{ secrets.TOKEN_NAME }}
-          publish_dir: ./dist
+          FOLDER: ./dist
