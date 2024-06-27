@@ -25,6 +25,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+       - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # "最近更新时间"等 git 日志相关信息，需要拉取全部提交记录
+          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: build
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
